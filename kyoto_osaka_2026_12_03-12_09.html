@@ -1,0 +1,132 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>京都・大阪｜2026 關西自由行</title><style>
+:root{--bg:#f7f5f1;--ink:#25312e;--muted:#728079;--accent:#ba604a;--line:#e4e1d9;--card:#fff;--green:#32695b}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Noto Sans TC','Microsoft JhengHei',sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}header{background:linear-gradient(120deg,#233f39,#456a5c);color:#fff;padding:42px max(20px,calc((100vw - 1120px)/2)) 34px}header .eyebrow{letter-spacing:.23em;font-size:12px;opacity:.8}h1{font-size:clamp(30px,5vw,53px);margin:12px 0 7px;letter-spacing:.04em}header p{margin:0;opacity:.85}.wrap{max-width:1120px;margin:auto;padding:24px 18px 80px}.toolbar{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 20px}.btn{border:1px solid var(--line);border-radius:10px;padding:10px 13px;background:#fff;color:var(--ink)}.btn:hover{border-color:var(--accent)}.primary{background:var(--accent);color:#fff;border-color:var(--accent)}.layout{display:grid;grid-template-columns:260px 1fr;gap:20px}.sidebar,.panel{background:var(--card);border:1px solid var(--line);border-radius:17px;box-shadow:0 5px 18px #172e2010}.sidebar{padding:15px;align-self:start;position:sticky;top:16px}.sidebar h3{margin:5px 5px 15px;font-size:15px}.daytab{display:block;text-align:left;width:100%;padding:13px 12px;border:0;border-radius:10px;background:transparent;margin-bottom:5px;color:var(--ink)}.daytab.active{background:#e9efe9;color:#234d41;font-weight:700}.daytab small{display:block;color:var(--muted);margin-top:3px;font-weight:400}.panel{padding:24px;min-width:0}.heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}.heading h2{font-size:25px;margin:0}.sub{color:var(--muted);font-size:13px;margin:7px 0 0}.pill{font-size:12px;border-radius:20px;padding:4px 9px;background:#f0eee9;color:#6e655e;white-space:nowrap}.note{background:#fff6ed;border-left:3px solid #cb8a5a;padding:12px 14px;margin:19px 0;border-radius:6px;font-size:13px;line-height:1.65}.timeline{border-left:2px solid #d7e1d8;margin:22px 0 10px 12px;padding-left:22px}.item{position:relative;padding:0 0 23px}.item:before{content:"";position:absolute;left:-29px;top:5px;background:var(--accent);width:11px;height:11px;border-radius:50%;border:2px solid #fff}.time{font-weight:750;color:var(--green);font-size:14px}.item h3{margin:5px 0 5px;font-size:17px}.item p{margin:0 0 9px;white-space:pre-wrap;color:#5c6660;line-height:1.6;font-size:14px}.itemactions{display:flex;gap:7px;flex-wrap:wrap}.link{font-size:12px;color:#365e55;text-decoration:none;border:1px solid #d8e3dd;padding:5px 9px;border-radius:7px;background:#f8faf8}.link:hover{background:#e8f1ec}.empty{padding:32px;text-align:center;color:var(--muted);background:#faf9f6;border:1px dashed var(--line);border-radius:12px;margin-top:20px}.booking{margin-top:26px;border-top:1px solid var(--line);padding-top:20px}.booking h3{margin:0 0 12px}.bookrow{display:grid;grid-template-columns:1fr auto auto;gap:9px;align-items:center;border-bottom:1px solid #f0eee8;padding:10px 0;font-size:14px}.bookrow small{display:block;color:var(--muted);margin-top:3px}.status{border-radius:20px;padding:6px 8px;font-size:12px;background:#fff3dd;color:#8d6427}.status.done{background:#e7f4eb;color:#246947}.muted{color:var(--muted)}dialog{border:0;border-radius:17px;box-shadow:0 24px 100px #0005;width:min(520px,calc(100vw - 30px));padding:23px}dialog::backdrop{background:#0a1918a0}dialog h2{margin:0 0 17px}label{display:block;font-size:13px;font-weight:650;margin:12px 0 5px}input,select,textarea{width:100%;border:1px solid #d8ddd7;border-radius:9px;padding:10px;background:#fff;color:var(--ink)}textarea{min-height:90px;resize:vertical}.formactions{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}.footer{font-size:12px;color:var(--muted);margin-top:20px;line-height:1.7}@media(max-width:720px){header{padding:33px 20px}.wrap{padding:16px 12px 55px}.layout{display:block}.sidebar{position:static;display:flex;overflow-x:auto;gap:7px;margin-bottom:14px;padding:9px}.sidebar h3{display:none}.daytab{min-width:104px;margin:0;text-align:center;padding:11px 9px}.panel{padding:18px}.bookrow{grid-template-columns:1fr auto}.bookrow button:last-child{grid-column:2}}
+.versionNotice{padding:12px 15px;margin:0 0 15px;border:1px solid #e7cba1;border-radius:10px;background:#fff7e9;color:#60472e;font-size:13px;line-height:1.6}[hidden]{display:none!important}</style></head><body><header><div class="eyebrow">JAPAN TRAVEL PLANNER</div><h1>京都・大阪自由行</h1><p>2026.12.03 — 12.09　·　7 天 6 夜　·　行程與預約管理</p></header><main class="wrap"><div class="toolbar"><button class="btn primary" id="addItem">＋ 新增行程</button><button class="btn" id="addBooking">＋ 新增預約</button><button class="btn" id="export">↓ 匯出備份</button><button class="btn" id="importBtn">↑ 匯入備份</button><button class="btn" id="reset">還原 PDF 初始行程</button><button class="btn" id="legacyExport" hidden>↓ 下載舊版備份</button><input type="file" id="file" accept="application/json" hidden></div><div class="versionNotice" id="legacyNotice" hidden>偵測到舊版六天行程資料。舊資料仍保留在此瀏覽器；新版顯示 PDF 的七天行程。可按「下載舊版備份」保存舊資料。</div><div class="versionNotice" id="storageNotice" hidden>目前瀏覽器無法儲存行程。請先匯出 JSON 備份，避免關閉頁面後遺失修改。</div><div class="layout"><nav class="sidebar" id="days" aria-label="每日行程"><h3>每日行程</h3></nav><section class="panel"><div class="heading"><div><h2 id="dayTitle"></h2><p class="sub" id="dayDate"></p></div><span class="pill" id="count"></span></div><div class="note" id="dayNote"></div><div class="timeline" id="timeline"></div><section class="booking"><div class="heading"><h3>預約與票券</h3><span class="pill" id="bookingCount"></span></div><div id="bookings"></div></section><div class="footer">所有修改預設儲存在目前瀏覽器（localStorage），不會同步到其他裝置。請定期匯出 JSON 備份。時間、交通班次、營業及點燈資訊均應出發前再確認；示意時段不代表已預約。</div></section></div></main>
+<dialog id="editDialog"><form id="editForm"><h2 id="editHeading">編輯行程</h2><input type="hidden" id="editId"><label for="itemDay">日期</label><select id="itemDay"></select><label for="itemTime">時間（例如 11:20 或 下午）</label><input id="itemTime" maxlength="30" placeholder="待定"><label for="itemTitle">景點／活動名稱 *</label><input id="itemTitle" required maxlength="100"><label for="itemLocation">地點或 Google Maps 連結</label><input id="itemLocation" maxlength="2048" placeholder="輸入地點，或貼上 Google Maps 分享連結"><label for="itemDesc">備註</label><textarea id="itemDesc"></textarea><div class="formactions"><button class="btn" type="button" data-close="editDialog">取消</button><button class="btn primary" type="submit">儲存</button></div></form></dialog>
+<dialog id="bookingDialog"><form id="bookingForm"><h2 id="bookingHeading">編輯預約</h2><input type="hidden" id="bookingId"><label for="bookingDay">日期</label><select id="bookingDay"></select><label for="bookingTitle">預約項目 *</label><input id="bookingTitle" required maxlength="100"><label for="bookingStatus">狀態</label><select id="bookingStatus"><option value="待確認">待確認</option><option value="尚未預約">尚未預約</option><option value="已預約">已預約</option><option value="不需預約">不需預約</option></select><label for="bookingUrl">官方／預約網址（選填）</label><input type="url" id="bookingUrl" placeholder="https://..."><label for="bookingNote">備註／訂位編號（選填）</label><textarea id="bookingNote"></textarea><div class="formactions"><button class="btn" type="button" data-close="bookingDialog">取消</button><button class="btn primary" type="submit">儲存</button></div></form></dialog>
+<script>
+'use strict';
+
+const dates = ['2026-12-03','2026-12-04','2026-12-05','2026-12-06','2026-12-07','2026-12-08','2026-12-09'];
+const titles = ['抵達京都・貴船候選','嵐山','清水寺・花見小路・伏見稻荷','伊根・天橋立','環球影城・其餘待編輯','大阪城・梅田','關西機場出發'];
+const notes = [
+  'PDF 標示 07:40 桃園機場出發、11:00–12:00 抵達京都、12:00 搭 HARUKA。15:00 貴船神社視情況前往；平等寺因幡堂是替代候選。',
+  '依 PDF 順序：渡月橋拍照 → 天龍寺（總門入園、北門出園）→ 竹林小徑 → 12:00 嵐山觀光小火車 → 和服 → 逛街。小火車路線、車程與窗邊景觀請以實際票券確認。',
+  '東福寺賞楓為候選，視情況可不去；其餘依 PDF 時段排列。',
+  '08:30 Klook 包車行程，PDF 列出伊根與天橋立；19:30 入住環球影城周邊。請依實際預約核對集合點及住宿。',
+  'PDF 僅列 08:00 環球影城，其餘時間留待編輯。',
+  'PDF 列 09:00 大阪城；晚上可去梅田逛街。',
+  'PDF 列 09:00 前往關西機場、12:20 從關西機場出發。請依機票與交通時間確認。'
+];
+const seed = {
+  items: [
+    {id:'n01',day:0,time:'07:40',title:'桃園機場出發',location:'Taiwan Taoyuan International Airport',desc:'依 PDF 班機時間。'},
+    {id:'n02',day:0,time:'11:00–12:00',title:'搭飛機抵達京都',location:'Kansai International Airport',desc:'PDF 此時段寫「搭飛機抵達京都」；實際入境機場與落地時間請以機票確認。'},
+    {id:'n03',day:0,time:'12:00',title:'搭乘 HARUKA 前往京都',location:'Kyoto Station',desc:'依 PDF 安排。'},
+    {id:'n04',day:0,time:'14:00',title:'Check in／放行李',location:'Kyoto Japan',desc:'住宿名稱依實際訂房補上。'},
+    {id:'n05',day:0,time:'15:00',title:'貴船神社（可去可不去）',location:'Kifune Shrine Kyoto',desc:'視情況前往；PDF 列平等寺因幡堂為替代行程。'},
+    {id:'n06',day:0,time:'15:00 候選',title:'平等寺因幡堂（替代行程）',location:'Byodoji Temple Kyoto',desc:'貴船神社行程的替代候選。'},
+    {id:'n07',day:1,time:'08:30',title:'嵐山・渡月橋拍照',location:'Togetsukyo Bridge Kyoto',desc:'抵達後可以先在渡月橋拍照。'},
+    {id:'n08',day:1,time:'09:00 起',title:'天龍寺 → 竹林小徑',location:'Tenryu-ji Temple Kyoto',desc:'PDF 行走路徑：天龍寺總門入園，北門出園可直通竹林小徑。'},
+    {id:'n09',day:1,time:'12:00',title:'嵐山觀光小火車',location:'Torokko Arashiyama Station Kyoto',desc:'PDF 記為嵐山往龜岡方向，車程約 25 分鐘；雙數排座位可看保津川與楓葉。景觀與座位依實際情況。'},
+    {id:'n10',day:1,time:'14:00',title:'嵐山和服',location:'Arashiyama Kyoto',desc:''},
+    {id:'n11',day:1,time:'16:00',title:'選物店逛街',location:'Arashiyama Kyoto',desc:''},
+    {id:'n12',day:2,time:'06:00',title:'二年坂、三年坂',location:'Sannenzaka Kyoto',desc:''},
+    {id:'n13',day:2,time:'08:00',title:'日式建築星巴克・咖啡早餐',location:'Starbucks Coffee Kyoto Ninenzaka Yasaka Chaya',desc:'依 PDF 時段。'},
+    {id:'n14',day:2,time:'09:00',title:'清水寺',location:'Kiyomizu-dera Kyoto',desc:''},
+    {id:'n15',day:2,time:'10:30',title:'GOKAGO 京都抹茶店',location:'GOKAGO Kyoto',desc:''},
+    {id:'n16',day:2,time:'11:00',title:'石塀小路',location:'Ishibei Koji Kyoto',desc:''},
+    {id:'n17',day:2,time:'12:00',title:'花見小路',location:'Hanamikoji Street Kyoto',desc:''},
+    {id:'n18',day:2,time:'13:00',title:'東福寺賞楓（候選）',location:'Tofuku-ji Temple Kyoto',desc:'PDF 註明視情況可不去。'},
+    {id:'n19',day:2,time:'14:00',title:'伏見稻荷神社',location:'Fushimi Inari Taisha Kyoto',desc:''},
+    {id:'n20',day:3,time:'08:30',title:'Klook 包車行程',location:'Kyoto Japan',desc:'集合點及出發細節依預約確認。'},
+    {id:'n21',day:3,time:'10:00–11:00',title:'伊根',location:'Ine Kyoto',desc:'PDF 列於上午時段。'},
+    {id:'n22',day:3,time:'14:00',title:'天橋立',location:'Amanohashidate Kyoto',desc:''},
+    {id:'n23',day:3,time:'19:30',title:'Check in・環球影城住宿',location:'Universal Studios Japan Osaka',desc:'住宿名稱依實際訂房補上。'},
+    {id:'n24',day:4,time:'08:00',title:'環球影城',location:'Universal Studios Japan Osaka',desc:'PDF 其餘時段未列明細，留待編輯。'},
+    {id:'n25',day:5,time:'09:00',title:'大阪城',location:'Osaka Castle',desc:''},
+    {id:'n26',day:5,time:'晚上',title:'梅田逛街',location:'Umeda Osaka',desc:'PDF 註明晚上可以去梅田逛街。'},
+    {id:'n27',day:6,time:'09:00',title:'前往關西機場',location:'Kansai International Airport',desc:''},
+    {id:'n28',day:6,time:'12:20',title:'關西機場出發',location:'Kansai International Airport',desc:'依 PDF 班機時間。'}
+  ],
+  bookings: [
+    {id:'r01',day:0,title:'去程機票・桃園 07:40 出發',status:'待確認',url:'',note:'依 PDF；航班及抵達機場請核對機票。'},
+    {id:'r02',day:0,title:'京都住宿',status:'待確認',url:'',note:'14:00 Check in／放行李；訂房資訊待補。'},
+    {id:'r03',day:1,title:'嵐山觀光小火車 12:00',status:'待確認',url:'',note:'依 PDF；班次、搭乘站及座位依票券確認。'},
+    {id:'r04',day:1,title:'嵐山和服',status:'待確認',url:'',note:'PDF 安排 14:00。'},
+    {id:'r05',day:3,title:'Klook 伊根・天橋立包車',status:'待確認',url:'',note:'PDF 安排 08:30；集合點與預約資料待補。'},
+    {id:'r06',day:3,title:'環球影城周邊住宿',status:'待確認',url:'',note:'PDF 安排 19:30 Check in。'},
+    {id:'r07',day:4,title:'環球影城門票',status:'待確認',url:'',note:'PDF 列 08:00 環球影城。'},
+    {id:'r08',day:6,title:'回程機票・關西 12:20 出發',status:'待確認',url:'',note:'依 PDF；航班資訊請核對機票。'}
+  ]
+};
+
+const key='kyoto-osaka-planner-v2';
+const oldKey='kyoto-osaka-planner-v1';
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+const clone=x=>JSON.parse(JSON.stringify(x));
+const safeUrl=value=>{try{const u=new URL(value);return ['https:','http:'].includes(u.protocol)?u.href:''}catch{return ''}};
+const validDay=x=>Number.isInteger(x)&&x>=0&&x<dates.length;
+function validData(d){return d&&Array.isArray(d.items)&&Array.isArray(d.bookings)&&d.items.every(x=>x&&typeof x.id==='string'&&validDay(x.day)&&typeof x.title==='string')&&d.bookings.every(x=>x&&typeof x.id==='string'&&validDay(x.day)&&typeof x.title==='string')}
+let state=clone(seed),active=0,storageAvailable=true,oldData=null;
+try{
+  const saved=localStorage.getItem(key);
+  if(saved){const parsed=JSON.parse(saved);if(validData(parsed))state={items:parsed.items,bookings:parsed.bookings};else throw Error('新版儲存格式不正確')}
+  oldData=localStorage.getItem(oldKey);
+}catch(err){storageAvailable=false;console.warn('行程儲存資料無法讀取',err)}
+function download(data,name){const url=URL.createObjectURL(new Blob([data],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function save(){try{localStorage.setItem(key,JSON.stringify({version:2,...state}));storageAvailable=true}catch{storageAvailable=false}render()}
+function dateLabel(i){return `${Number(dates[i].slice(5,7))}/${Number(dates[i].slice(8))}`}
+function directMapUrl(value){
+  const input=String(value??'').trim();
+  const candidate=/^https?:\/\//i.test(input)?input:/^(?:www\.|maps\.|google\.|goo\.)/i.test(input)?'https://'+input:'';
+  if(!candidate)return '';
+  try{
+    const url=new URL(candidate);
+    const host=url.hostname.toLowerCase();
+    const google= /^(?:www\.)?google\.(?:com|com\.[a-z]{2}|co\.[a-z]{2}|[a-z]{2})$/.test(host);
+    const allowed=(google&&url.pathname.startsWith('/maps'))||(host==='maps.google.com')||(host==='maps.app.goo.gl')||(host==='goo.gl'&&url.pathname.startsWith('/maps/'));
+    if(!allowed)return '';
+    url.protocol='https:';
+    return url.href;
+  }catch{return ''}
+}
+function looksLikeUrl(value){return /^(?:[a-z][a-z\d+.-]*:|(?:www\.|maps\.|google\.|goo\.)\S*\/)/i.test(String(value??'').trim())}
+function mapUrl(loc){const input=String(loc??'').trim();if(!input)return '';return directMapUrl(input)||(looksLikeUrl(input)?'':'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(input))}
+function timeOrder(value){
+  const time=String(value??'').trim();
+  const match=time.match(/^(?:約\s*)?(\d{1,2}):([0-5]\d)/);
+  if(match&&Number(match[1])<24)return Number(match[1])*60+Number(match[2]);
+  const periods={清晨:300,早上:480,上午:540,中午:720,下午:900,傍晚:1020,晚上:1140};
+  return periods[time]??Infinity;
+}
+function render(){
+  $('days').innerHTML='<h3>每日行程</h3>'+dates.map((d,i)=>`<button class="daytab ${i===active?'active':''}" data-day="${i}">Day ${i+1} · ${dateLabel(i)}<small>${esc(titles[i])}</small></button>`).join('');
+  $('dayTitle').textContent=`Day ${active+1}｜${titles[active]}`;
+  $('dayDate').textContent=dates[active]+'（'+['四','五','六','日','一','二','三'][active]+'）';
+  $('dayNote').textContent=notes[active];
+  const items=state.items.filter(x=>x.day===active).map((item,index)=>({item,index})).sort((a,b)=>timeOrder(a.item.time)-timeOrder(b.item.time)||a.index-b.index).map(x=>x.item);
+  $('count').textContent=items.length+' 項行程';
+  $('timeline').innerHTML=items.length?items.map(x=>`<article class="item"><div class="time">${esc(x.time||'待定')}</div><h3>${esc(x.title)}</h3><p>${esc(x.desc)}</p><div class="itemactions">${mapUrl(x.location)?`<a class="link" href="${esc(mapUrl(x.location))}" target="_blank" rel="noopener noreferrer">↗ 地圖導航</a>`:''}<button class="link" data-edit="${esc(x.id)}">編輯</button><button class="link" data-delete="${esc(x.id)}">刪除</button></div></article>`).join(''):'<div class="empty">這天尚未安排，點選「新增行程」開始規劃。</div>';
+  const bs=state.bookings.filter(x=>x.day===active);
+  $('bookingCount').textContent=bs.length+' 項';
+  $('bookings').innerHTML=bs.length?bs.map(b=>`<div class="bookrow"><div><strong>${esc(b.title)}</strong><small>${esc(b.note)} ${safeUrl(b.url)?`<a href="${esc(safeUrl(b.url))}" target="_blank" rel="noopener noreferrer">開啟預約連結 ↗</a>`:''}</small></div><span class="status ${b.status==='已預約'?'done':''}">${esc(b.status)}</span><div><button class="link" data-bookedit="${esc(b.id)}">編輯</button> <button class="link" data-bookdelete="${esc(b.id)}">刪除</button></div></div>`).join(''):'<div class="empty">這天尚無預約記錄。</div>';
+  $('storageNotice').hidden=storageAvailable;
+}
+for(const id of ['itemDay','bookingDay'])$(id).innerHTML=dates.map((d,i)=>`<option value="${i}">Day ${i+1}｜${d}</option>`).join('');
+if(oldData){$('legacyNotice').hidden=false;$('legacyExport').hidden=false}
+function openItem(id){const x=state.items.find(v=>v.id===id);$('editHeading').textContent=x?'編輯行程':'新增行程';$('editId').value=x?.id||'';$('itemDay').value=x?.day??active;$('itemTime').value=x?.time||'';$('itemTitle').value=x?.title||'';$('itemLocation').value=x?.location||'';$('itemDesc').value=x?.desc||'';$('editDialog').showModal()}
+function openBooking(id){const x=state.bookings.find(v=>v.id===id);$('bookingHeading').textContent=x?'編輯預約':'新增預約';$('bookingId').value=x?.id||'';$('bookingDay').value=x?.day??active;$('bookingTitle').value=x?.title||'';$('bookingStatus').value=x?.status||'尚未預約';$('bookingUrl').value=x?.url||'';$('bookingNote').value=x?.note||'';$('bookingDialog').showModal()}
+$('addItem').onclick=()=>openItem();$('addBooking').onclick=()=>openBooking();
+document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>$(b.dataset.close).close());
+$('editForm').onsubmit=e=>{e.preventDefault();const id=$('editId').value;const item={id:id||uid(),day:Number($('itemDay').value),time:$('itemTime').value.trim()||'待定',title:$('itemTitle').value.trim(),location:$('itemLocation').value.trim(),desc:$('itemDesc').value.trim()};if(!item.title)return;if(looksLikeUrl(item.location)&&!directMapUrl(item.location)){alert('請貼上有效的 Google Maps 連結，或改填地點名稱。');$('itemLocation').focus();return}state.items=id?state.items.map(x=>x.id===id?item:x):[...state.items,item];active=item.day;$('editDialog').close();save()};
+$('bookingForm').onsubmit=e=>{e.preventDefault();const id=$('bookingId').value;const b={id:id||uid(),day:Number($('bookingDay').value),title:$('bookingTitle').value.trim(),status:$('bookingStatus').value,url:$('bookingUrl').value.trim(),note:$('bookingNote').value.trim()};if(!b.title)return;state.bookings=id?state.bookings.map(x=>x.id===id?b:x):[...state.bookings,b];active=b.day;$('bookingDialog').close();save()};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-day],[data-edit],[data-delete],[data-bookedit],[data-bookdelete]');if(!b)return;if(b.dataset.day!==undefined){active=Number(b.dataset.day);render()}else if(b.dataset.edit)openItem(b.dataset.edit);else if(b.dataset.bookedit)openBooking(b.dataset.bookedit);else if(b.dataset.delete&&confirm('確定刪除此行程？')){state.items=state.items.filter(x=>x.id!==b.dataset.delete);save()}else if(b.dataset.bookdelete&&confirm('確定刪除此預約？')){state.bookings=state.bookings.filter(x=>x.id!==b.dataset.bookdelete);save()}});
+$('export').onclick=()=>download(JSON.stringify({version:2,...state},null,2),'kyoto-osaka-2026-12-backup.json');
+$('legacyExport').onclick=()=>{if(oldData)download(oldData,'kyoto-osaka-legacy-v1-backup.json')};
+$('importBtn').onclick=()=>$('file').click();
+$('file').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const d=JSON.parse(await f.text());if(!validData(d))throw Error('備份格式不正確，或日期不在 12/3–12/9');if(confirm('匯入會覆蓋目前的新版行程與預約。建議先匯出目前備份。確定匯入嗎？')){state={items:d.items,bookings:d.bookings};save()}}catch(err){alert('無法匯入：'+err.message)}e.target.value=''};
+$('reset').onclick=()=>{if(confirm('確定還原 PDF 初始行程？目前編輯將被覆蓋，建議先匯出備份。')){state=clone(seed);save()}};
+render();
+</script></body></html>
