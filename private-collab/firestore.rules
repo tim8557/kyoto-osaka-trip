@@ -3,7 +3,11 @@ service cloud.firestore {
   match /databases/{database}/documents {
     function member() {
       return request.auth != null &&
-        exists(/databases/$(database)/documents/members/$(request.auth.uid));
+        exists(/databases/$(database)/documents/members/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/members/$(request.auth.uid)).data.get('disabled', false) == false;
+    }
+    function editor() {
+      return member() && get(/databases/$(database)/documents/members/$(request.auth.uid)).data.get('role', 'editor') in ['editor', 'owner'];
     }
     function validItem(data) {
       return data.keys().hasOnly(['day','time','title','location','desc','rev']) &&
@@ -31,7 +35,7 @@ service cloud.firestore {
     }
     match /trips/trip-1/meta/main {
       allow read: if member();
-      allow create: if member() &&
+      allow create: if editor() &&
         request.resource.data.keys().hasOnly(['dates','titles','notes']) &&
         request.resource.data.dates is list && request.resource.data.dates.size() == 7 &&
         request.resource.data.titles is list && request.resource.data.titles.size() == 7 &&
@@ -40,20 +44,21 @@ service cloud.firestore {
     }
     match /trips/trip-1/import/main {
       allow read: if member();
-      allow create: if member() && request.resource.data.keys().hasOnly(['done']) && request.resource.data.done == true;
-      allow update, delete: if false;
+      allow create: if editor() && request.resource.data.keys().hasOnly(['done','rev']) && request.resource.data.done == true && request.resource.data.rev == 1;
+      allow update: if editor() && request.resource.data.keys().hasOnly(['done','rev']) && request.resource.data.done == true && request.resource.data.rev == resource.data.get('rev',0) + 1;
+      allow delete: if false;
     }
     match /trips/trip-1/items/{id} {
       allow read: if member();
-      allow create: if member() && validItem(request.resource.data) && request.resource.data.rev == 1;
-      allow update: if member() && validItem(request.resource.data) && request.resource.data.rev == resource.data.rev + 1;
-      allow delete: if member();
+      allow create: if editor() && validItem(request.resource.data) && request.resource.data.rev == 1;
+      allow update: if editor() && validItem(request.resource.data) && request.resource.data.rev == resource.data.rev + 1;
+      allow delete: if editor();
     }
     match /trips/trip-1/bookings/{id} {
       allow read: if member();
-      allow create: if member() && validBooking(request.resource.data) && request.resource.data.rev == 1;
-      allow update: if member() && validBooking(request.resource.data) && request.resource.data.rev == resource.data.rev + 1;
-      allow delete: if member();
+      allow create: if editor() && validBooking(request.resource.data) && request.resource.data.rev == 1;
+      allow update: if editor() && validBooking(request.resource.data) && request.resource.data.rev == resource.data.rev + 1;
+      allow delete: if editor();
     }
   }
 }
