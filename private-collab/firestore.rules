@@ -12,7 +12,7 @@ service cloud.firestore {
     function validItem(data) {
       return data.keys().hasOnly(['day','time','title','location','desc','rev','category']) &&
         data.keys().hasAll(['day','time','title','location','desc','rev']) &&
-        data.get('category', 'sight') in ['sight','food'] &&
+        data.get('category', 'sight') in ['sight','food','lodging'] &&
         data.day is int && data.day >= 0 && data.day < 7 &&
         data.time is string && data.time.size() <= 30 &&
         data.title is string && data.title.size() > 0 && data.title.size() <= 100 &&
