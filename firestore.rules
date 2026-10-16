@@ -33,6 +33,16 @@ service cloud.firestore {
         data.note is string && data.note.size() <= 5000 &&
         data.rev is int && data.rev > 0;
     }
+    match /trips/trip-1/settings/googleMap {
+      allow read: if member();
+      function validMap() { return request.resource.data.keys().hasOnly(['url','rev']) &&
+        request.resource.data.url is string && request.resource.data.url.size() <= 2048 &&
+        request.resource.data.url.matches('https://www[.]google[.]com/maps/d/viewer[?]mid=[A-Za-z0-9_-]{10,200}') &&
+        request.resource.data.rev is int; }
+      allow create: if editor() && validMap() && request.resource.data.rev == 1;
+      allow update: if editor() && validMap() && request.resource.data.rev == resource.data.rev + 1;
+      allow delete: if false;
+    }
     match /members/{uid} {
       allow get: if request.auth != null && request.auth.uid == uid;
       allow list, create, update, delete: if false;
